@@ -3,7 +3,7 @@ import morgan from 'morgan';
 const app = express();
 const PORT = process.env.port || 3000;
 
-import * as router from "./routes/starSign.js"
+import router from "./routes/starSign.js"
 
 app.use(morgan("dev"));
 app.use(express.static("public"));
