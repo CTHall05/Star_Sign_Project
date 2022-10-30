@@ -1,7 +1,5 @@
 import express from 'express';
 const router = express.Router()
-export default router; 
-
 
 import * as starSignModels from '../models/starSign.js';
 
@@ -10,4 +8,5 @@ router.get("/", async function (req, res){
     res.json({success: true, payload: result});
 })
 
-// module.exports = router;
+export default router; 
+// module.exports = router; 

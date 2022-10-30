@@ -5,5 +5,5 @@ const pool = new Pool({
 });
 
 export default function query (text, params) {
-    return Pool.query(text, params);
+    return pool.query(text, params);
 }
