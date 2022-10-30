@@ -1,4 +1,4 @@
-const { query } = import('../db/index.js');
+import query from '../db/index.js';
 
 export async function getStarsigns() {
     const result = await query('SELECT * FROM starsigns');
