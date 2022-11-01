@@ -1,12 +1,17 @@
 import express from 'express';
 const router = express.Router()
 
-import * as starSignModels from '../models/starSign.js';
+import {getStarSigns, getStarSignByName} from '../models/starSign.js';
 
 router.get("/", async function (req, res){
-    const result = await starSignModels.getStarSigns();
-    res.json({success: true, payload: result});
+    if (req.query.name !== undefined){
+        const result = await getStarSignByName(req.query.name);
+        return res.json({success: true, payload: result})
+    }
+    const result = await getStarSigns();
+    res.json({success: true, payload: result}); 
 })
+
 
 export default router; 
 // module.exports = router; 

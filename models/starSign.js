@@ -1,11 +1,11 @@
 import query from '../db/index.js';
 
-async function getStarSigns() {
-    const result = await query('SELECT * FROM starsigns');
-    console.log(result)
-    return result.rows;
+export async function getStarSigns() {
+    const result = await query(`SELECT * FROM starsigns`);
+    return result.rows;  
 };
 
-export {
-    getStarSigns
-} 
+export async function getStarSignByName(){
+    const result = await query(`SELECT * FROM starsigns WHERE star_sign = 'Leo'`);
+    return result.rows;  
+}
